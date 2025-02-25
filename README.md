@@ -49,6 +49,15 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.25.3/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 sudo docker-compose --version
 
+Crea el grupo de docker sino existe
+sudo groupadd docker
+sudo usermod -aG docker $USER
+su -s ${USER}
+docker run hello-world
+ 
+
+
+
 ## 3. Desplegar la Aplicación
 Desde la carpeta del proyecto, ejecutamos compose para construir la imagen en segundo plano:
 
