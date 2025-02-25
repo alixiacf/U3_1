@@ -102,27 +102,31 @@ PROBLEMAS EN LINUX POR
 Los containers se han caido por falta de permisos
 sudo docker ps -a
 El container base de datos lo podemos arrancar por su nombre 
+  ```bash
 sudo docker start u3_1-base_datos-1  
-
+   ```
 Inicializamos la Base de datos. Entramos en el contenedor y una vez que ya tenemos el nombre del usuario para la conexión podemos levantar el contenedor backend.
+  ```bash
 sudo docker start u3_1-backend-1
-
+   ```
 ## 5. Configurar el usuario de acceso
 sudo docker exec -it u3_1-base_datos-1 mongosh -u root -p supersecreta --authenticationDatabase admin
- 
+  ```bash
 use admin
-
+   ```
+ ```bash
 db.createUser({
   user: "daw",
   pwd: "abc123.",
   roles: ["userAdminAnyDatabase", "readWriteAnyDatabase"]
 })
-
+   ```
 Nos devuelve {ok:1}
 
 Volvemos a levantar con 
+ ```bash
 sudo docker compose up 
-
+   ```
 
 ## 6. Parar y Limpiar
 Eliminamos los dockers con , redes y volúmenes
