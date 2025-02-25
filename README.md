@@ -90,7 +90,7 @@ Inicializamos la Base de datos. Entramos en el contenedor y una vez que ya tenem
 sudo docker start u3_1-backend-1
 
 ## 5. Configurar el usuario de acceso
-sudo docker exec -it Nsudo ONBRE_DEL_CONTENEDOR mongosh -u root -p supersecreta --authenticationDatabase admin
+sudo docker exec -it u3_1-base_datos-1 mongosh -u root -p supersecreta --authenticationDatabase admin
  
 use admin
 
