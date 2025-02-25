@@ -50,7 +50,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 sudo docker-compose --version
 
 ## 3. Desplegar la Aplicación
-Desde la carpeta del proyecto, ejecuta:
+Desde la carpeta del proyecto, ejecutamos compose para construir la imagen en segundo plano:
 
    ```bash
        sudo docker compose up -d --build
@@ -71,8 +71,17 @@ sudo docker-compose logs -f
 Accede a la aplicación en http://localhost:8080 (o el puerto configurado).
 Revisa la documentación o código fuente para conocer las rutas disponibles.
 
+PROBLEMAS EN LINUX POR 
+Los containers se han caido por falta de permisos
+sudo docker ps -a
+El container base de datos lo podemos arrancar por su nombre 
+sudo docker start u3_1-base_datos-1  
+
+Inicializamos la Base de datos. Entramos en el contenedor y una vez que ya tenemos el nombre del usuario para la conexión podemos levantar el contenedor backend.
+sudo docker start u3_1-backend-1
+
 ## 5. Configurar el usuario de acceso
-sudo docker exec -it MONBRE_DEL_CONTENEDOR mongosh -u root -p supersecreta --authenticationDatabase admin
+sudo docker exec -it Nsudo ONBRE_DEL_CONTENEDOR mongosh -u root -p supersecreta --authenticationDatabase admin
  
 use admin
 
