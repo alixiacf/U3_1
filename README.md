@@ -68,10 +68,11 @@ sudo usermod -aG docker $USER
    ``` 
    ```bash
 su -s ${USER}
-   ``` 
+   ```
+
    ```bash
 docker run hello-world
-    ``` 
+   ``` 
 
 
 
