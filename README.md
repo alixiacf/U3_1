@@ -41,23 +41,30 @@ services:
     image: mongo
     ports:
       - "27017:27017"
-   ``` 
+   ```
+En Linux verificar que tenemos instalado compose
+sudo apt update
+sudo apt upgrade
+sudo curl -L "https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+sudo docker-compose --version
+
 ## 3. Desplegar la Aplicación
 Desde la carpeta del proyecto, ejecuta:
 
    ```bash
-         docker-compose up -d
+       sudo docker compose up -d --build
    ``` 
 
 -d levanta los contenedores en segundo plano.
 
 Comprueba que todo esté corriendo:
    ```bash
-docker-compose ps
+sudo docker-compose ps
    ``` 
 (Opcional) Para ver los logs en tiempo real:
  ```bash
-docker-compose logs -f
+sudo docker-compose logs -f
    ``` 
 
 ## 4. Uso de la Aplicación
@@ -65,7 +72,7 @@ Accede a la aplicación en http://localhost:8080 (o el puerto configurado).
 Revisa la documentación o código fuente para conocer las rutas disponibles.
 
 ## 5. Configurar el usuario de acceso
-docker exec -it MONBRE_DEL_CONTENEDOR mongosh -u root -p supersecreta --authenticationDatabase admin
+sudo docker exec -it MONBRE_DEL_CONTENEDOR mongosh -u root -p supersecreta --authenticationDatabase admin
  
 use admin
 
