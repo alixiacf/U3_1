@@ -85,22 +85,22 @@ db.createUser({
 Nos devuelve {ok:1}
 
 Volvemos a levantar con 
-docker compose up 
+sudo docker compose up 
 
 
 ## 6. Parar y Limpiar
 Eliminamos los dockers con , redes y volúmenes
  ```bash
-                 docker compose down -v 
+                sudo docker compose down -v 
    ```
 Eliminamos todos los recursos no utilizados 
  ```bash
-                 docker system prune --volumes -a
+               sudo docker system prune --volumes -a
    ``` 
 Verificamos todo el sistema
  ```bash
-                 docker system df
-                 docker volume prune -a -f
+              sudo docker system df
+              sudo docker volume prune -a -f
 
     ``` 
 Test con 
