@@ -43,18 +43,35 @@ services:
       - "27017:27017"
    ```
 En Linux verificar que tenemos instalado compose
+   ```bash
 sudo apt update
+   ``` 
+   ```bash
 sudo apt upgrade
+   ``` 
+   ```bash
 sudo curl -L "https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+   ``` 
+   ```bash
 sudo chmod +x /usr/local/bin/docker-compose
+   ``` 
+   ```bash
 sudo docker-compose --version
+   ``` 
 
 Crea el grupo de docker sino existe
+   ```bash
 sudo groupadd docker
+   ``` 
+   ```bash
 sudo usermod -aG docker $USER
+   ``` 
+   ```bash
 su -s ${USER}
+   ``` 
+   ```bash
 docker run hello-world
- 
+    ``` 
 
 
 
